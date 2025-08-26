@@ -1,0 +1,25 @@
+{
+  "title": "Engineering Metrics Dashboard (CSV)",
+  "uid": "eng-metrics-csv",
+  "schemaVersion": 38,
+  "version": 1,
+  "time": {
+    "from": "now-90d",
+    "to": "now"
+  },
+  "templating": {
+    "list": [
+      {
+        "name": "csv_path",
+        "type": "textbox",
+        "label": "CSV file path",
+        "query": "/path/to/reports/metrics_daily_github.csv",
+        "current": {
+          "text": "/path/to/reports/metrics_daily_github.csv",
+          "value": "/path/to/reports/metrics_daily_github.csv"
+        }
+      }
+    ]
+  },
+  "panels": []
+}
