@@ -108,6 +108,17 @@ Cada métrica tem um **objetivo**, um **modo de cálculo** e pode ser **melhorad
       - gh pr list --label rollback --state merged --json number
       - gh pr list --state merged --json number   # total
 
+  - **Resumo**
+    - commitFrequency (Git) – contagem de commits no período
+    - codingTimeHours (Git) – horas entre o primeiro e o último commit do período
+    - codeMetrics (Git) – adições/remoções e percentuais em “recent” (por padrão últimos 21 dias) vs “old”
+    - cycleTimeHoursAvg (GitHub) – média de horas do primeiro commit do PR até o merge
+    - reviewTimeHoursAvg (GitHub) – média de horas de updatedAt/createdAt até o merge
+    - pickupTimeHoursAvg (GitHub) – média de horas de createdAt até a primeira “pega” (proxy updatedAt)
+    - deploymentFrequency (GitHub) – contagem de PRs mesclados no período
+    - deployTimeHoursAvg (GitHub) – média de horas de merge do PR até a primeira release publicada após o merge
+    - mttrHoursAvg (GitHub) – média de horas de PRs com label bug ou fix (abertura → merge)
+    - cfrPercent (GitHub) – % de PRs mesclados com labels failure ou rollback sobre o total mesclado
 
 ### Diagrama Métricas DORA
 ![Métricas DORA](diagram_dora.png)
