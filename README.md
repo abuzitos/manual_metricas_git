@@ -280,7 +280,7 @@ sudo systemctl restart grafana-server
   ]
 }
 ```
-
+ - [DASHBOARDS.md](DASHBOARDS.md)  
 ---
 
 ## 🔹 Capítulo 6 - Bitbucket
