@@ -25,21 +25,55 @@ Essas métricas ajudam a responder perguntas como:
 Cada métrica tem um **objetivo**, um **modo de cálculo** e pode ser **melhorada com práticas ágeis e engenharia de software**.
 
 ### Exemplos:
-- **Commit Frequency**  
-  - Objetivo: medir cadência de commits  
-  - Como funciona: contagem de commits no período  
-  - Como melhorar: commits pequenos, integração contínua
+  - **Commit Frequency**
+    - Objetivo: Contar quantos commits foram feitos em um intervalo de tempo.
+    - Como funciona: Obtido via comando Git `git log` ou `git rev-list`. Mede a cadência de contribuição.
+    - Como melhorar: Manter commits pequenos e frequentes, dividir tarefas grandes em partes menores,aplicar integração contínua.
+      
+  - **Coding Time**
+    - Objetivo: Tempo entre o primeiro e o último commit em um período.
+    - Como funciona: Calculado a partir das datas de commits via `git log`.
+    - Como melhorar: Evitar longos períodos sem commits, adotar trunk-based development, promover commits diários.
+      
+  - **Code Metrics**
+    - Objetivo: Percentual de linhas adicionadas e removidas (código novo vs legado).
+    - Como funciona: Usa `git log --numstat` para somar adições e deleções.
+    - Como melhorar: Adotar refactoring contínuo, manter código simples e legível, usar revisões de código.
 
-- **Cycle Time**  
-  - Objetivo: tempo do primeiro commit até o merge do PR  
-  - Como funciona: análise de PRs mesclados  
-  - Como melhorar: PRs menores, revisões rápidas
+  - **Cycle Time**
+    - Objetivo: Tempo médio entre o primeiro commit de um PR e seu merge.
+    - Como funciona: Necessita dados de PRs via APIs de GitHub/GitLab/Azure DevOps.
+    -  Como melhorar: Manter PRs pequenos, revisar rapidamente, usar automação de testes.
+        
+  - **Review Time**
+    - Objetivo: Tempo médio de revisão até merge.
+    - Como funciona: Calculado de updatedAt/createdAt até mergedAt dos PRs.
+    - Como melhorar: Promover cultura de revisão rápida, definir SLA de revisão (ex: 24h), usar pair review.
 
-- **MTTR (Mean Time To Recovery)**  
-  - Objetivo: tempo para corrigir falhas  
-  - Como funciona: PRs com label `bug` ou `fix`  
-  - Como melhorar: priorizar correções críticas, CI/CD com rollback rápido
+  - **Pickup Time**
+    - Objetivo: Tempo até um PR ser pego para revisão.
+    - Como funciona: Do momento da criação até a primeira atualização/revisão.
+    - Como melhorar: Evitar filas longas de revisão, estimular colaboração, priorizar revisão sobre novas tarefas.
 
+  - **Deployment Frequency**
+    - Objetivo: Número de merges/deploys no período.
+    - Como funciona: Contagem de PRs mesclados ou releases publicados.
+    - Como melhorar: Adotar CI/CD, automatizar pipeline de deploy, incentivar deploys frequentes (diários/semanal).
+
+  - **Deploy Time**
+    - Objetivo: Tempo entre merge e deploy em produção.
+    - Como funciona: Comparação entre data de merge e data da release ou run de pipeline.
+    - Como melhorar: Automatizar deploy, reduzir handoffs, definir objetivo de deploy <24h após merge.
+
+  - **MTTR (Mean Time To Recovery)**
+    - Objetivo: Tempo médio para corrigir falhas/bugs.
+    - Como funciona: Mede duração de PRs com labels `bug`/`fix` entre abertura e merge.
+    - Como melhorar: Adotar cultura DevOps de resposta rápida, priorizar correções críticas, usar monitoramento e alertas.
+
+  - **CFR (Change Failure Rate)**
+    - Objetivo: Percentual de PRs com falha/rollback.
+    - Como funciona: Conta PRs com labels `failure`/`rollback` dividido pelo total.
+    - Como melhorar: Promover testes automatizados, refino de critérios de aceite, retrospectivas para analisar falhas.
 
 - **Commit Frequency (Frequência de Commits)**
     - Objetivo: Contar quantos commits foram feitos em um intervalo.
