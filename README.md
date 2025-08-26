@@ -41,52 +41,52 @@ Cada métrica tem um **objetivo**, um **modo de cálculo** e pode ser **melhorad
   - Como melhorar: priorizar correções críticas, CI/CD com rollback rápido
 
 
-- ** Commit Frequency (Frequência de Commits) **
+- **Commit Frequency (Frequência de Commits)**
     - Objetivo: Contar quantos commits foram feitos em um intervalo.
     - Comandos Git:
       - git log --since="2025-01-01" --until="2025-01-31" --pretty=format:"%h"
       - git rev-list --count HEAD
     - O primeiro retorna commits no período; o segundo conta commits totais.
 
-- ** Coding Time (Tempo de Codificação) **
+- **Coding Time (Tempo de Codificação)**
     - Objetivo: Calcular o tempo entre o primeiro e o último commit do período.
     - Comandos Git:
         - git log --since="2025-01-01" --until="2025-01-31" --pretty=format:"%ci"
     - Depois pega a menor e a maior data e calcula a diferença em horas.
 
-  - ** Code Metrics (Adições e Deleções de Código) **
+  - **Code Metrics (Adições e Deleções de Código)**
     - Objetivo: Medir proporção de código adicionado/removido.
     - Comandos Git:
       - git log --since="21 days ago" --numstat --pretty="%H"
     - Isso mostra adições/deleções por commit. Somando os valores, você calcula os percentuais.
 
-  - ** Cycle Time (Tempo de Ciclo) **
+  - **Cycle Time (Tempo de Ciclo)**
     - Objetivo: Tempo entre o primeiro commit e o merge do PR.
     - Necessita PRs (GitHub/GitLab API).
     - Comandos Git (base local):
       - git log <branch> --pretty=format:"%ci"   # data do primeiro commit
     - O merge do PR em si geralmente vem de API (ex: gh pr list --state merged --json createdAt,mergedAt).
 
-  - ** Review Time (Tempo de Revisão) **
+  - **Review Time (Tempo de Revisão)**
     - Objetivo: Tempo entre criação/atualização do PR e o merge.
     - Necessita API de PRs (GitHub/GitLab).
     - Com GitHub CLI:
       - gh pr list --state merged --json createdAt,updatedAt,mergedAt
 
-  - ** Pickup Time (Tempo até revisão começar) **
+  - **Pickup Time (Tempo até revisão começar)**
     - Objetivo: Tempo entre criação do PR e quando foi pego para revisão.
     - Necessita reviewers → só disponível em API.
     - Com GitHub CLI:
       - gh pr list --json createdAt,updatedAt,reviewRequests
 
-  - ** Deployment Frequency (Frequência de Deploys) **
+  - **Deployment Frequency (Frequência de Deploys)**
     - Objetivo: Quantos PRs foram mesclados (assumindo merge = deploy).
     - Com GitHub CLI:
       - gh pr list --state merged --json mergedAt
       - Ou, se houver tags/releases:
       - git tag --sort=-creatordate
 
-  - ** Deploy Time (Tempo até ir para Produção) **
+  - **Deploy Time (Tempo até ir para Produção)**
     - Objetivo: Tempo entre merge do PR e publicação da release.
     - Com GitHub CLI:
       - gh pr list --state merged --json mergedAt
@@ -95,13 +95,13 @@ Cada métrica tem um **objetivo**, um **modo de cálculo** e pode ser **melhorad
       - git log --merges --pretty=format:"%ci %s"
       - git tag --format="%(creatordate:iso8601) %(refname:short)"
 
-  - ** MTTR (Mean Time to Recovery) **
+  - **MTTR (Mean Time to Recovery)**
     - Objetivo: Tempo médio entre abertura e merge de PRs com label bug ou fix.
     - Com GitHub CLI:
       - gh pr list --label bug --state merged --json createdAt,mergedAt
       - gh pr list --label fix --state merged --json createdAt,mergedAt
 
-  - ** CFR (Change Failure Rate) **
+  - **CFR (Change Failure Rate)**
     - Objetivo: Proporção de PRs que tiveram label failure ou rollback.
     - Com GitHub CLI:
       - gh pr list --label failure --state merged --json number
