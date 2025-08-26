@@ -346,7 +346,11 @@ git_commit_count_by_author() {
   - [git_metrics_by_author.sh](git_metrics_by_author.sh)  
 - Dashboards:  
   - [metrics_dashboard_grafana.json](metrics_dashboard_grafana.json)  
-  - [metrics_dashboard_by_author.json](metrics_dashboard_by_author.json)  
+  - [metrics_dashboard_by_author.json](metrics_dashboard_by_author.json)
+- Explicações:
+  - [git_metrics_by_author_explicacao.md](git_metrics_by_author_explicacao.md)
+  - [git_metrics_daily_unified_explicacao.md](git_metrics_daily_unified_explicacao.md)
+  - [git_metrics_unified_explicacao.md](git_metrics_unified_explicacao.md)
 
 As imagens dos diagramas (`diagram_git_flow.png`, `diagram_dora.png`, `diagram_pr_flow.png`, `diagram_cron.png`) devem estar no mesmo diretório do README.md.
 
