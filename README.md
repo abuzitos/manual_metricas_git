@@ -24,7 +24,7 @@ Essas métricas ajudam a responder perguntas como:
 
 Cada métrica tem um **objetivo**, um **modo de cálculo** e pode ser **melhorada com práticas ágeis e engenharia de software**.
 
-### Exemplos:
+### Definição:
   - **Commit Frequency**
     - Objetivo: Contar quantos commits foram feitos em um intervalo de tempo.
     - Como funciona: Obtido via comando Git `git log` ou `git rev-list`. Mede a cadência de contribuição.
@@ -75,14 +75,15 @@ Cada métrica tem um **objetivo**, um **modo de cálculo** e pode ser **melhorad
     - Como funciona: Conta PRs com labels `failure`/`rollback` dividido pelo total.
     - Como melhorar: Promover testes automatizados, refino de critérios de aceite, retrospectivas para analisar falhas.
 
-- **Commit Frequency (Frequência de Commits)**
+### Exemplos:
+  - **Commit Frequency (Frequência de Commits)**
     - Objetivo: Contar quantos commits foram feitos em um intervalo.
     - Comandos Git:
       - git log --since="2025-01-01" --until="2025-01-31" --pretty=format:"%h"
       - git rev-list --count HEAD
     - O primeiro retorna commits no período; o segundo conta commits totais.
 
-- **Coding Time (Tempo de Codificação)**
+  - **Coding Time (Tempo de Codificação)**
     - Objetivo: Calcular o tempo entre o primeiro e o último commit do período.
     - Comandos Git:
         - git log --since="2025-01-01" --until="2025-01-31" --pretty=format:"%ci"
