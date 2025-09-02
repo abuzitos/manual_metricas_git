@@ -1,0 +1,2 @@
+date,repo,commitFrequency,codingTimeHours,code_recent_add,code_recent_del,code_recent_percentNew,code_recent_percentDeleted,code_old_add,code_old_del,code_old_percentNew,code_old_percentDeleted,cycleTimeHoursAvg,reviewTimeHoursAvg,pickupTimeHoursAvg,deploymentFrequency,deployTimeHoursAvg,mttrHoursAvg,cfrPercent
+"2025-09-01","abuzitos/node-metrics-dashboard-completo",0,0.00,0,0,0.00,0.00,0,0,0.00,0.00,0.00,0.00,0.00,0,0.00,0.00,0.00

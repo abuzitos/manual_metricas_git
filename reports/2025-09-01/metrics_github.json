@@ -1,0 +1,31 @@
+{
+  "provider": "github",
+  "repo": "abuzitos/node-metrics-dashboard-completo",
+  "period": {
+    "since": "2025-09-01",
+    "until": "2025-09-02"
+  },
+  "commitFrequency": 0,
+  "codingTimeHours": 0.00,
+  "codeMetrics": {
+    "recent": {
+      "add": 0,
+      "del": 0,
+      "percentNewCode": 0.00,
+      "percentDeletedCode": 0.00
+    },
+    "old": {
+      "add": 0,
+      "del": 0,
+      "percentNewCode": 0.00,
+      "percentDeletedCode": 0.00
+    }
+  },
+  "cycleTimeHoursAvg": 0.00,
+  "reviewTimeHoursAvg": 0.00,
+  "pickupTimeHoursAvg": 0.00,
+  "deploymentFrequency": 0,
+  "deployTimeHoursAvg": 0.00,
+  "mttrHoursAvg": 0.00,
+  "cfrPercent": 0.00
+}

@@ -153,7 +153,7 @@ gh_list_releases_json() {
 }
 
 # ---------- Azure DevOps helpers ----------
-az_require() { have az || die "Requer Azure CLI (az) + extensão azure-devops."); }
+az_require() { have az || die "Requer Azure CLI (az) + extensão azure-devops."; }
 az_setup_defaults() { az devops configure -d organization="$AZ_ORG" project="$AZ_PROJECT" >/dev/null 2>&1 || true; }
 az_repo_id() { az_require; az_setup_defaults; az repos show --repository "$AZ_REPO_NAME" --query id -o tsv; }
 az_list_completed_prs_json() {
